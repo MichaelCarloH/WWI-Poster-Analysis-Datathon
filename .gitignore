@@ -1,7 +1,3 @@
-# Ignore Posters.zip
-data/Posters.zip
-
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -173,3 +169,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignore Posters.zip
+data/Posters.zip
+
