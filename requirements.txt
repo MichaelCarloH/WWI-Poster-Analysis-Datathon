@@ -1,8 +1,4 @@
-# Ignore Posters.zip
-data/Posters.zip
-
-
-# Byte-compiled / optimized / DLL files
+# WWI-Poster-Analysis-Datathon# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
