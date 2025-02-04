@@ -171,5 +171,5 @@ cython_debug/
 .pypirc
 
 # Ignore Posters.zip
-data/Posters.zip
+data/
 
