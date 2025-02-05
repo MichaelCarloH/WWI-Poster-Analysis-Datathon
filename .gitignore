@@ -172,4 +172,4 @@ cython_debug/
 
 # Ignore Posters.zip
 data/
-
+.venv/
