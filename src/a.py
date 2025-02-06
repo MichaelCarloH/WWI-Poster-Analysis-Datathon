@@ -1,7 +1,13 @@
 import ollama
+import json
+import pandas as pd
+import re
+
+# Path to the text file
+file_path = "C:/Users/Michael/WWI-Poster-Analysis-Datathon/data/Posters/texts/french/FL4984787_1_DIGI_0035_00001_VIEW_MAIN.jpg.txt"
 
 # Read the text file
-with open("C:/Users/Michael/WWI-Poster-Analysis-Datathon/data/Posters/texts/french/FL4984787_1_DIGI_0035_00001_VIEW_MAIN.jpg.txt", "r", encoding="utf-8") as file:
+with open(file_path, "r", encoding="utf-8") as file:
     text_content = file.read()
 
 # Insert text into the DeepSeek-R1 prompt
@@ -18,6 +24,8 @@ Here is the raw text from a document:
 - Fix character misinterpretations: `0 ↔ O`, `1 ↔ l`, `I ↔ 1`, `rn → m`, `vv → w`
 - Detect and correct misspelled words based on the document language (French, German, Dutch).
 - Restore broken words and remove unnecessary line breaks.
+-ONLY return a valid JSON object with no additional text, reasoning, or explanations.
+
 
 ### Step 2: Text Analysis
 After correcting the OCR errors, analyze the corrected text and return results in JSON format:
@@ -40,3 +48,36 @@ print(deepseek_prompt)
 response = ollama.chat(model="deepseek-r1", messages = [{"role": "user", "content": deepseek_prompt}])
 
 print(response["message"]["content"])
+
+# Extract JSON response
+response_text = response["message"]["content"]
+print(response_text)
+
+json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
+
+if json_match:
+    json_text = json_match.group(0)  # Extract the JSON content
+    try:
+        response_data = json.loads(json_text)  # Convert to dictionary
+    except json.JSONDecodeError:
+        print("Error: Failed to parse JSON response.")
+        response_data = {}
+else:
+    print("Error: No valid JSON found in response.")
+    response_data = {}
+
+# Convert dictionary to DataFrame
+df = pd.json_normalize(response_data)
+
+# Append to an Excel file
+excel_path = "C:/Users/Michael/WWI-Poster-Analysis-Datathon/data/analysis_results.xlsx"
+
+try:
+    existing_df = pd.read_excel(excel_path)
+    df = pd.concat([existing_df, df], ignore_index=True)
+except FileNotFoundError:
+    pass  # No existing file, so we'll just write the new data
+
+df.to_excel(excel_path, index=False)
+
+print("Analysis results saved to", excel_path)
