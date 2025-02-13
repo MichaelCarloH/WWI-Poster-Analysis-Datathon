@@ -31,7 +31,7 @@ We use Hugging Face's pre-trained models for text analysis. Follow these steps t
 3. **Store the API Key**:
    - Export it as an environment variable in your terminal:
      ```bash
-     export HUGGINGFACE_API_KEY=your_api_key_here
+     echo "HF_API_KEY:your_api_key_here"
      ```
    - Or store it in a `.env` file:
      ```
