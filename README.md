@@ -29,9 +29,9 @@ We use Hugging Face's pre-trained models for text analysis. Follow these steps t
    - Click "New Token," name it appropriately (e.g., `datathon-project`), and choose "Write" permissions.
    - Copy and save the API key securely.
 3. **Store the API Key**:
-   - Export it as an environment variable in your terminal:
+   - Export it as an environment variable in your terminal power shell in vscode:
      ```bash
-     echo "HF_API_KEY:your_api_key_here"
+     $env:HF_API_KEY="your_api_key_here"
      ```
    - Or store it in a `.env` file:
      ```
