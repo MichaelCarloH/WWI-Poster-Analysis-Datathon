@@ -21,7 +21,7 @@ with open(file_path, "r", encoding="utf-8") as file:
 prompt = f'''
 You are a historical text analyst. Your task is to analyze WW1 propaganda text by:
 1. Correcting common OCR errors (e.g., misread characters, missing spaces, incorrect word formations).
-2. Extracting numerical scores for different attributes and in your thought process explain why you give a particular score.
+2. Extracting metadata like date, author etc and numerical scores for different attributes and in your thought process explain why you give a particular score.
 
 Here is the raw text from a document:
 
@@ -31,13 +31,19 @@ Here is the raw text from a document:
 - Fix character misinterpretations: `0 ↔ O`, `1 ↔ l`, `I ↔ 1`, `rn → m`, `vv → w`
 - Detect and correct misspelled words based on the document language (French, German, Dutch).
 - Restore broken words and remove unnecessary line breaks.
--ONLY return a valid JSON object with no additional text, reasoning, or explanations.
+- ONLY return a valid JSON object with no additional text, reasoning, or explanations.
+- DON'T print your thinking in the response (</think>)
+- your response should only be from ''' "to" ''' of the JSON answer
 
 
 ### Step 2: Text Analysis
 After correcting the OCR errors, analyze the corrected text and return results in JSON format:
 ```json
 {{
+  "date": "Extract date as dd-mm-yy",
+  "publisher": "If there is the publisher extract it, otherwise assign NA",
+  "language": "Retrieve language of text",
+  "author": "Find author's name, otherwise assign NA",
   "corrected_text": "Corrected version of the input text.",
   "sentiment": {{ "positive": X.XX, "negative": X.XX, "neutral": X.XX }},
   "emotion_scores": {{ "fear": X.XX, "anger": X.XX, "hope": X.XX, "glory": X.XX, "patriotism": X.XX }},
@@ -67,7 +73,7 @@ messages = [
 completion = client.chat.completions.create(
     model="deepseek-ai/DeepSeek-R1", 
 	messages=messages, 
-	max_tokens=3000,
+	max_tokens=15000,
 )
 
 print(completion.choices[0].message)
