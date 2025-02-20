@@ -28,9 +28,20 @@ The discussion is designed to:
 ### 3. **Data Handling – Preparing Texts for Analysis**
 The `data_handler.py` script processes **OCR-extracted text files** and prepares them for analysis. Users can specify which texts to analyze, and the script structures the data accordingly.
 
-### 4. **EXTRA. Data Visualization – Emotional & Thematic Comparison**
-The `visualization.py` module compares the **original propaganda** with the **AI-generated counter-propaganda**.  
+### 4. **Data Visualization – Emotional & Thematic Comparison**
+The `wordcloud.py` module visualizes **key themes** from both **original propaganda** and **AI-generated counter-propaganda**.  
+Using frequency analysis, a **word cloud** highlights **dominant themes**, with **larger words** representing more prevalent topics.
+
+**EXTRA:** The `visualization.py` module compares the **original propaganda** with the **AI-generated counter-propaganda**.  
 Using sentiment and thematic analysis, different **emotions are represented as growing bubbles** in a visual comparison. The **size of each bubble** depends on the **dominance of specific emotions** in the texts.
+
+The first image below shows the **word cloud** representation of thematic dominance in the texts.  
+The second image illustrates how exposure to **counter-propaganda** influenced the AI agents' perspectives, shifting from **national pride** toward **empathy and reflection** on the human cost of war.  
+
+![image](https://github.com/user-attachments/assets/42902e53-c52e-441d-a372-cbab98443be6) 
+![image](https://github.com/user-attachments/assets/7c15706a-f453-403f-ab29-34a436578dbd)
+
+
 
 ### 5. **EXTRA: Text Analysis – Sentiment & Theme Detection**
 Located in `src/TextAnalysis/`, this component handles the core **text analysis**:
