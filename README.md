@@ -1,19 +1,49 @@
-## The Black Pearl – KU Leuven Datathon 2025
+# The Black Pearl – KU Leuven Datathon 2025
 
-Our team, The Black Pearl, consists of Michael Carlo, Giovanni Dettori, Fabrizio Sacco, Keith Atienza, and Seamus Conlon. We are participating in the KU Leuven Datathon, analyzing World War I propaganda posters using LLMs for historical interpretation, theme identification, sentiment analysis, and trend detection.
+Our team, **The Black Pearl**, consists of Michael Carlo, Giovanni Dettori, Fabrizio Sacco, Keith Atienza, and Seamus Conlon. We are participating in the KU Leuven Datathon, analyzing **World War I propaganda posters** using LLMs for historical interpretation, theme identification, sentiment analysis, and trend detection.
 
 ## Project Overview
 
-The goal of this project is to perform sentiment analysis and identify temporal trends in World War I propaganda poster data using Large Language Models (LLMs). The dataset consists of OCR-extracted text files stored in the `data/` folder. We utilize both local and cloud-based models for analysis:
-- **Local Inference**: Running LLMs locally using Ollama.
-- **Cloud-Based Inference**: Using pre-trained models via the Hugging Face API.
+The goal of this project is to **perform sentiment analysis and identify temporal trends** in World War I propaganda poster data using Large Language Models (LLMs). The dataset consists of **OCR-extracted text files** stored in the `data/` folder. We utilize both **local and cloud-based models** for analysis:
+- **Local Inference**: Running LLMs locally using **Ollama**.
+- **Cloud-Based Inference**: Using pre-trained models via the **Hugging Face API** or **OpenAI API** for **TinyTroupe** simulation.
 
-To facilitate exploration and analysis, the project structure is as follows:
-- `data/` – Contains the OCR-extracted text files.
-- `notebooks/` – Jupyter notebooks for statistical analysis and visualization.
-- `src/` – Source code directory:
-  - `Ollama.py` – Runs a model locally using Ollama and conducts text analysis.
-  - `HF_text_analysis.py` – Uses the Hugging Face API for analysis.
+## Workflow
+
+### 1. **TinyTroupe – Counter-Propaganda Generation**
+**TinyTroupe** is a Jupyter Notebook simulation where **two AI agents engage in a conversation** about a given WWI propaganda poster.  
+The discussion is designed to:
+- Reveal **biases**, **rhetorical techniques**, and **persuasive strategies** in historical propaganda.
+- Generate **counter-propaganda**, providing an **alternative perspective**.
+
+### 2. **TinyTroupe2 – Placeholder for Further Development**
+A reserved section for **future enhancements**, potentially involving **reinforcement learning** or **multi-agent interactions**.
+
+### 3. **Data Visualization – Emotional & Thematic Comparison**
+The `visualization.py` module compares the **original propaganda** with the **AI-generated counter-propaganda**.  
+Using sentiment and thematic analysis, different **emotions are represented as growing bubbles** in a visual comparison. The **size of each bubble** depends on the **dominance of specific emotions** in the texts.
+
+### 4. **Data Handling – Preparing Texts for Analysis**
+The `data_handler.py` script processes **OCR-extracted text files** and prepares them for analysis. Users can specify which texts to analyze, and the script structures the data accordingly.
+
+### 5. **Text Analysis – Sentiment & Theme Detection**
+Located in `src/TextAnalysis/`, this component handles the core **text analysis**:
+- **`HF_text_analysis.py`** – Uses the **Hugging Face API** for **sentiment analysis** and **topic modeling**.
+- **`Ollama.py`** – Runs **LLMs locally** for **text interpretation** without cloud reliance.
+
+## Project Structure
+WWI-POSTER-ANALYSIS/
+│-- data/                    # OCR-extracted text files
+│-- notebooks/               # Jupyter notebooks for exploration
+│-- results/                 # Analysis outputs
+│-- src/                     # Source code
+│   │-- TextAnalysis/        # Sentiment & thematic analysis
+│   │   ├── HF_text_analysis.py
+│   │   ├── Ollama.py
+│   │-- tiny-troupe.ipynb    # Simulation of AI-generated conversations
+│   │-- visualization.py     # Emotional & thematic visual comparison
+│   │-- data_handler.py      # Prepares text for analysis
+│-- README.md                # Project documentation
 
 ## Project Setup
 
