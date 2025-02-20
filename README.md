@@ -10,6 +10,8 @@ The goal of this project is to **perform sentiment analysis and identify tempora
 
 ## Workflow
 
+Located in the 'src' folder all files below marked as extra aren't part of the datatthon results presented, however can be used to run different models or visualize certain data.
+
 ### 1. **TinyTroupe – Counter-Propaganda Generation**
 **'TinyTroupe.ipynb'** is a Jupyter Notebook simulation where **two AI agents engage in a conversation** about a given WWI propaganda poster.  
 The discussion is designed to:
@@ -17,14 +19,16 @@ The discussion is designed to:
 - Generate **counter-propaganda**, providing an **alternative perspective**.
 
 ### 2. **TinyTroupe2ipynb – Placeholder for Further Development**
-A reserved section for **future enhancements**, potentially involving **reinforcement learning** or **multi-agent interactions**.
+The discussion is designed to:
+- Reveal **biases**, **rhetorical techniques**, and **persuasive strategies** in historical propaganda.
+- Generate **counter-propaganda**, providing an **alternative perspective** using **more detailed interactions** .
 
-### 3. **Data Visualization – Emotional & Thematic Comparison**
+### 3. **Data Handling – Preparing Texts for Analysis**
+The `data_handler.py` script processes **OCR-extracted text files** and prepares them for analysis. Users can specify which texts to analyze, and the script structures the data accordingly.
+
+### 4. **EXTRA. Data Visualization – Emotional & Thematic Comparison**
 The `visualization.py` module compares the **original propaganda** with the **AI-generated counter-propaganda**.  
 Using sentiment and thematic analysis, different **emotions are represented as growing bubbles** in a visual comparison. The **size of each bubble** depends on the **dominance of specific emotions** in the texts.
-
-### 4. **Data Handling – Preparing Texts for Analysis**
-The `data_handler.py` script processes **OCR-extracted text files** and prepares them for analysis. Users can specify which texts to analyze, and the script structures the data accordingly.
 
 ### 5. **EXTRA: Text Analysis – Sentiment & Theme Detection**
 Located in `src/TextAnalysis/`, this component handles the core **text analysis**:
