@@ -32,20 +32,22 @@ Located in `src/TextAnalysis/`, this component handles the core **text analysis*
 - **`Ollama.py`** – Runs **LLMs locally** for **text interpretation** without cloud reliance.
 
 ## Project Structure
+
 WWI-POSTER-ANALYSIS/
+
 │-- data/                    # OCR-extracted text files
 │-- notebooks/               # Jupyter notebooks for exploration
 │-- results/                 # Analysis outputs
 │-- src/                     # Source code
-│   │-- TextAnalysis/        # EXTRA: Sentiment & thematic analysis
+│   │-- TextAnalysis/        # Sentiment & thematic analysis
 │   │   ├── HF_text_analysis.py
 │   │   ├── Ollama.py
-│   │   ├── HF_api_test.py
-│   │-- tiny-troupe.ipynb    # Simulation of AI-generated conversations
-│   │-- tiny-troupe2.ipynb    # Simulation of AI-generated conversations
+│   │-- tiny-troupe.ipynb    # AI-generated conversations
+│   │-- tiny-troupe2.ipynb   # Placeholder for future work
 │   │-- visualization.py     # Emotional & thematic visual comparison
 │   │-- data_handler.py      # Prepares text for analysis
 │-- README.md                # Project documentation
+
 
 ## Project Setup
 
