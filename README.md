@@ -12,7 +12,7 @@ The goal of this project is to **perform sentiment analysis and identify tempora
 
 ## Workflow
 
-All files marked as **EXTRA** are located in the `src` folder. These files are **not part of the official Datathon results** but can be used to run alternative models or visualize specific data.  
+All files marked as **EXTRA** below are located in the `src` folder. These files are **not part of the official Datathon results** but can be used to run alternative models or visualize specific data.  
 
 ### 1. **TinyTroupe – Counter-Propaganda Generation**
 **'TinyTroupe.ipynb'** is a Jupyter Notebook simulation where **two AI agents engage in a conversation** about a given WWI propaganda poster.  
