@@ -2,6 +2,8 @@
 
 Our team, **The Black Pearl**, consists of Michael Carlo, Giovanni Dettori, Fabrizio Sacco, Keith Atienza, and Seamus Conlon. We are participating in the KU Leuven Datathon, analyzing **World War I propaganda posters** using LLMs for historical interpretation, theme identification, sentiment analysis, and trend detection.
 
+![image](https://github.com/user-attachments/assets/e0db7737-e1fd-48e5-8f42-5be95455783c)
+
 ## Project Overview
 
 The goal of this project is to **perform sentiment analysis and identify temporal trends** in World War I propaganda poster data using Large Language Models (LLMs). The dataset consists of **OCR-extracted text files** stored in the `data/` folder. We utilize both **local and cloud-based models** for analysis:
