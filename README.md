@@ -20,7 +20,7 @@ The discussion is designed to:
 - Reveal **biases**, **rhetorical techniques**, and **persuasive strategies** in historical propaganda.
 - Generate **counter-propaganda**, providing an **alternative perspective**.
 
-### 2. **TinyTroupe2ipynb – Placeholder for Further Development**
+### 2. **TinyTroupe2.ipynb – Placeholder for Further Development**
 The discussion is designed to:
 - Reveal **biases**, **rhetorical techniques**, and **persuasive strategies** in historical propaganda.
 - Generate **counter-propaganda**, providing an **alternative perspective** using **more detailed interactions** .
